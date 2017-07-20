@@ -1,0 +1,37 @@
+{% import "_includes/forms" as forms %}
+
+{{ forms.textField({
+    first:        true,
+    label:        "Pipedrive API URL"|t,
+    required:     true,
+    id:           'apiUrl',
+    name:         'apiUrl',
+    instructions: "The URL that we need to use in order to query Pipedrive API. See more at https://developers.pipedrive.com/v1"|t,
+    value:        settings.apiUrl,
+    autofocus:    true,
+    errors:       settings.getErrors('apiUrl'),
+}) }}
+
+{{ forms.textField({
+    first:        true,
+    label:        "Pipedrive Personal API token"|t,
+    required:     true,
+    id:           'apiToken',
+    name:         'apiToken',
+    instructions: "The API token to gain access to pipedrive services layer. See more at https://developers.pipedrive.com/v1"|t,
+    value:        settings.apiToken,
+    autofocus:    true,
+    errors:       settings.getErrors('apiToken')
+}) }}
+
+{{ forms.textField({
+    first:        true,
+    label:        "Pipedrive Owner ID"|t,
+    required:     true,
+    id:           'ownerId',
+    name:         'ownerId',
+    instructions: "The ID of the user that's gonna be used to create the deals. See more at https://developers.pipedrive.com/v1"|t,
+    value:        settings.ownerId,
+    autofocus:    true,
+    errors:       settings.getErrors('ownerId')
+}) }}
